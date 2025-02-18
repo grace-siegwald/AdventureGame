@@ -1,4 +1,11 @@
 ﻿namespace AdventureGame
+
+/*
+ * Adventure Game
+ * Grace Siegwald
+ * 2/18/2025
+ */
+
 {
     internal class Program
     {
