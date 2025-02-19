@@ -24,9 +24,17 @@ namespace AdventureGame
         //public static int GetRandomNumber(int max) => RandomNumberGenerator.Next(max);
         //public static int GetRandomNumber(int min, int max) => RandomNumberGenerator.Next(min, max);
 
+        
+        // These methods need to be "static" so we don't need to make a new instance of "Utility" every time we use these methods.
         public static void Print(string message)
         {
             Console.WriteLine(message);
+        }
+
+        public static void Continue()
+        {
+            Print($"Press any key to continue");
+            Console.ReadKey();
         }
     }
 }

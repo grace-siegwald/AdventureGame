@@ -20,5 +20,25 @@ namespace AdventureGame
             List<string> names = new List<string> { "Awesomeness", "Superioriority", "Fabulousness", "Might", "Sorcery", "Garbage", "Deliciousness", "Greatness", "Bizare", "Candy", "Contradiction", "Fire", "Ice", "Confusion", "Gathering"};
             LocationName = $"{prefix[GetRandomNumber(prefix.Count)]} {names[GetRandomNumber(names.Count)]}";
         }   
+
+        public void Visit()
+        {
+            // Print out name of where the player is.
+            Utility.Print($"You have arrived at {LocationName}");
+
+            // NPC randomly appears (or dedicated?)?
+
+            // NPC has a request?
+
+            // Find a random item?
+
+            // Another activity?
+
+            // Special event based on random number or probability?
+
+            Continue();
+            World world = new World();
+            world.Setup();
+        }
     }
 }
