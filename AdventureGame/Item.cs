@@ -9,5 +9,10 @@ namespace AdventureGame
     internal class Item
     {
         public string ItemName;
+
+        public virtual string DescribeItem()
+        {
+            return ItemName;
+        }
     }
 }

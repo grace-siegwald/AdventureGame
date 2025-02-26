@@ -10,17 +10,17 @@ namespace AdventureGame
     {
         public static Random RandomNumberGenerator = new Random();
 
+        // These are Overloaded Methods - More than one method with the same name, each with different "signitures".
         public static int GetRandomNumber(int max)
         {
             return RandomNumberGenerator.Next(max);
         }
-
         public static int GetRandomNumber(int min, int max)
         {
             return RandomNumberGenerator.Next(min, max);
         }
 
-        // Here, the arrow => acts as the "return" in the above example
+        // Here, the arrow => acts as the "return" 
         //public static int GetRandomNumber(int max) => RandomNumberGenerator.Next(max);
         //public static int GetRandomNumber(int min, int max) => RandomNumberGenerator.Next(min, max);
 
@@ -35,6 +35,12 @@ namespace AdventureGame
         {
             Print($"Press any key to continue");
             Console.ReadKey();
+        }
+
+        public static int ConvertStringToInteger(string input)
+        {
+            if (int.TryParse(input, out int result)) return result;
+            return -1;
         }
     }
 }
