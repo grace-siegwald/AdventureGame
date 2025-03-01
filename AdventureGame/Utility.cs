@@ -42,5 +42,12 @@ namespace AdventureGame
             if (int.TryParse(input, out int result)) return result;
             return -1;
         }
+
+        public static void SetConsoleColor()
+        {
+            Console.BackgroundColor = System.ConsoleColor.DarkGray;
+            Console.ForegroundColor = System.ConsoleColor.White;
+            Console.Clear();
+        }
     }
 }

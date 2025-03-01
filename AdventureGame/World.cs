@@ -7,10 +7,6 @@ using static AdventureGame.Utility;
 
 namespace AdventureGame
 {
-    enum Jobs
-    {
-
-    }
     internal class World
     {
         // Set of locations.
@@ -29,24 +25,24 @@ namespace AdventureGame
         //method that will setup up the world
         public void Setup()
         {
-            SetName();
-            SetJob();
-        }
- 
-        private void SetName()
-        {
-            Console.WriteLine("Welcome, Adventurer!\n" +
-                "Please enter your Name:\n");
-            player.PlayerName = Console.ReadLine();
+            Console.Title = "temp";
+            SetConsoleColor();
+            ChooseName();
+            ChooseJob();
             GameLoop();
         }
-
-        private void SetJob()
+ 
+        private void ChooseName()
         {
-
+            Print("Welcome, Adventurer!\n" +
+                "Please enter your Name:\n");
+            player.PlayerName = Console.ReadLine();
         }
 
-
+        private void ChooseJob()
+        {
+            Print($"{player.PlayerName}, welcome to the world of ");
+        }
 
         public void SetLocationList()
         {
@@ -66,8 +62,8 @@ namespace AdventureGame
         private void GameLoop()
         {
             Console.Clear();
-            Console.WriteLine("Where would you like to go? Enter a number to go to the location\n");
-            Console.WriteLine(GetLocationList());
+            Print("Where would you like to go? Enter a number to go to the location\n");
+            Print(GetLocationList());
             
             string choice = Console.ReadLine();
             if (int.TryParse(choice, out int result))

@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace AdventureGame
 {
+    enum Job
+    {
+        Sorcerer,
+        Theif,
+        Knight
+    }
     internal class Person
     {
         public string PlayerName;
         public string PersonName;
-        public string PlayerJob;
+        public Job PlayerJob;
         // Both the player and npc's will need a list to hold items.
 
         /* TO DO:
@@ -19,6 +25,11 @@ namespace AdventureGame
          * Assign their chosen job to the PlayerJob variable.
          * Give certain properties to each of the jobs. 
          */
+
+        public void SetupJob()
+        {
+
+        }
 
         public void Equip(Item item)
         {
