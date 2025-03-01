@@ -9,9 +9,8 @@ namespace AdventureGame
     enum WearableLocation
     {
         neck,
-        figer,
+        finger,
         feet,
-
     }
     internal class WearableItem:Item
     {

@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AdventureGame.Location">
-    <Position X="2.75" Y="3" Width="3" />
+    <Position X="2" Y="3.25" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAQAAAQAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Location.cs</FileName>
@@ -17,7 +17,7 @@
   <Class Name="AdventureGame.Person">
     <Position X="5.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAgAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAAAAAIAAAAAAAEAAAgAAAAAAAAAAI=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="AdventureGame.World">
     <Position X="2.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAQAAAAACAACAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAACAAAAAAAAQAAAAACAACAAAABAAAAQAAAAAA=</HashCode>
       <FileName>World.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -47,6 +47,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAA=</HashCode>
       <FileName>WearableItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.NPC">
+    <Position X="5.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>NPC.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

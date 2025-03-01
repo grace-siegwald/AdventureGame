@@ -7,6 +7,10 @@ using static AdventureGame.Utility;
 
 namespace AdventureGame
 {
+    enum Jobs
+    {
+
+    }
     internal class World
     {
         // Set of locations.
@@ -19,6 +23,33 @@ namespace AdventureGame
 
         public World()
         {
+            SetLocationList();
+        }
+
+        //method that will setup up the world
+        public void Setup()
+        {
+            SetName();
+            SetJob();
+        }
+ 
+        private void SetName()
+        {
+            Console.WriteLine("Welcome, Adventurer!\n" +
+                "Please enter your Name:\n");
+            player.PlayerName = Console.ReadLine();
+            GameLoop();
+        }
+
+        private void SetJob()
+        {
+
+        }
+
+
+
+        public void SetLocationList()
+        {
             int numberLocations = GetRandomNumber(4, 6);
             List<string> prefix = new List<string>() { "Mount", "Castle", "Village of", "Lake", "Valley of", "Desert", "Realm of", "Land of" };
             List<string> names = new List<string>() { "Awesome", "Superior", "Fabulous", "Purpleness", "Lattes", "Coffee", "Sourdough Bread", "Cupcake", "Tiramisu", "Candycane" };
@@ -30,20 +61,6 @@ namespace AdventureGame
                 prefix.RemoveAt(prefixNumber);
                 names.RemoveAt(nameNumber);
             }
-        }
-
-        //method that will setup up the world
-        public void Setup()
-        {
-            SetName();
-        }
- 
-        private void SetName()
-        {
-            Console.WriteLine("Welcome, Adventurer!\n" +
-                "Please enter your Name:\n");
-            player.PlayerName = Console.ReadLine();
-            GameLoop();
         }
 
         private void GameLoop()
