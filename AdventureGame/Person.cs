@@ -20,7 +20,6 @@ namespace AdventureGame
         // Both the player and npc's will need a list to hold items.
 
         /* TO DO:
-         * Create an enum containing the diferent jobs a player can choose from
          * Allow the player to choose which class they want after they enter their name. Should explain what that choice means.
          * Assign their chosen job to the PlayerJob variable.
          * Give certain properties to each of the jobs. 

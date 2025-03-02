@@ -43,6 +43,13 @@ namespace AdventureGame
             return -1;
         }
 
+        public static void SetTextColor(string input)
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Print(input);
+            SetConsoleColor();
+        }
+        
         public static void SetConsoleColor()
         {
             Console.BackgroundColor = System.ConsoleColor.DarkGray;

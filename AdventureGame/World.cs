@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using static AdventureGame.Utility;
@@ -11,6 +12,8 @@ namespace AdventureGame
     {
         // Set of locations.
         // The world "has a" location.
+        public string WorldName = "Randomazo";
+
         List<Location> locations = new List<Location>();
         
         // Player
@@ -28,8 +31,6 @@ namespace AdventureGame
             Console.Title = "temp";
             SetConsoleColor();
             ChooseName();
-            ChooseJob();
-            GameLoop();
         }
  
         private void ChooseName()
@@ -37,11 +38,15 @@ namespace AdventureGame
             Print("Welcome, Adventurer!\n" +
                 "Please enter your Name:\n");
             player.PlayerName = Console.ReadLine();
+            ChooseJob();
         }
 
         private void ChooseJob()
         {
-            Print($"{player.PlayerName}, welcome to the world of ");
+            Console.Clear();
+            //SetTextColor(WorldName);
+            Print($"{player.PlayerName}, welcome to the world of {WorldName}!");
+            GameLoop();
         }
 
         public void SetLocationList()
