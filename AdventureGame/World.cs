@@ -44,8 +44,9 @@ namespace AdventureGame
         private void ChooseJob()
         {
             Console.Clear();
-            //SetTextColor(WorldName);
-            Print($"{player.PlayerName}, welcome to the world of {WorldName}!");
+            Print($"{player.PlayerName}, welcome to the world of {TextColorMagenta(WorldName)}!");
+            
+
             GameLoop();
         }
 
