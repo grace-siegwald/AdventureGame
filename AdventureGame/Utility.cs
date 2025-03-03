@@ -43,19 +43,29 @@ namespace AdventureGame
             return -1;
         }
 
-        public static string TextColorMagenta(string input)
+        public static void PrintWordMagenta(string wholeSentence, string colorWord) 
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            string output = input;
-            SetConsoleColor();
-            return output;
+            string[] sentence = wholeSentence.Split(" ");
+            foreach (string word in sentence)
+            {
+                if (word == colorWord)
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.Write(word);
+                    Console.ResetColor();
+                }
+                else
+                {
+                    DefualtConsoleColor();
+                    Console.Write(word + " ");
+                }
+            }
         }
-        
-        public static void SetConsoleColor()
+
+        public static void DefualtConsoleColor()
         {
             Console.BackgroundColor = System.ConsoleColor.DarkGray;
             Console.ForegroundColor = System.ConsoleColor.White;
-            Console.Clear();
         }
     }
 }

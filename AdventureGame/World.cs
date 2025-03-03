@@ -29,7 +29,9 @@ namespace AdventureGame
         public void Setup()
         {
             Console.Title = "temp";
-            SetConsoleColor();
+            Console.BackgroundColor = System.ConsoleColor.DarkGray;
+            Console.ForegroundColor = System.ConsoleColor.White;
+            Console.Clear();
             ChooseName();
         }
  
@@ -44,9 +46,9 @@ namespace AdventureGame
         private void ChooseJob()
         {
             Console.Clear();
-            Print($"{player.PlayerName}, welcome to the world of {TextColorMagenta(WorldName)}!");
-            
+            PrintWordMagenta($"{player.PlayerName}, welcome to the world of {WorldName} !\nIn {WorldName} , everywhere you go, everything you see, and every item you find is randomized.", WorldName);
 
+            Console.ReadKey();
             GameLoop();
         }
 
