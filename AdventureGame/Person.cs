@@ -10,7 +10,7 @@ namespace AdventureGame
     enum Job
     {
         Sorcerer,
-        Theif,
+        Thief,
         Knight
     }
     internal class Person
@@ -69,7 +69,7 @@ namespace AdventureGame
             if (num == 2)
             {
                 PlayerJob = new Job();
-                PlayerJob = Job.Theif;
+                PlayerJob = Job.Thief;
             }
             if (num == 3)
             {
