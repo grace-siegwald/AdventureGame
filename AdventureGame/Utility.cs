@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,16 +44,115 @@ namespace AdventureGame
             return -1;
         }
 
-        public static void PrintWordMagenta(string wholeSentence, string colorWord) 
+        public static void PrintWithColor(string wholeSentence, string colorWord, string color) 
         {
             string[] sentence = wholeSentence.Split(" ");
             foreach (string word in sentence)
             {
-                if (word == colorWord)
+                if (word == colorWord & color == "Black")
+                {
+                    Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "DarkBlue")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "DarkGreen")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "DarkCyan")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "DarkRed")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "DarkMagenta")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "DarkYellow")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "Gray")
+                {
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "DarkGray")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "Blue")
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "Green")
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "Cyan")
+                {
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "Red")
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "Magenta")
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.Write(word);
                     Console.ResetColor();
+                    continue;
+                }
+                if (word == colorWord & color == "Yellow")
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.Write(word);
+                    Console.ResetColor();
+                    continue;
                 }
                 else
                 {

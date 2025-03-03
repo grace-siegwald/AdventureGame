@@ -46,7 +46,10 @@ namespace AdventureGame
         private void ChooseJob()
         {
             Console.Clear();
-            PrintWordMagenta($"{player.PlayerName}, welcome to the world of {WorldName} !\nIn {WorldName} , everywhere you go, everything you see, and every item you find is randomized.", WorldName);
+            PrintWithColor($"{player.PlayerName}, welcome to the world of {WorldName} !\n" +
+                $"In {WorldName} , everywhere you go, everything you see, and every item you find is randomized.\n", WorldName, "DarkMagenta");
+
+            Print(player.ShowItems("Sorcerer"));
 
             Console.ReadKey();
             GameLoop();

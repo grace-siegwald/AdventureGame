@@ -17,6 +17,8 @@ namespace AdventureGame
         public string PlayerName;
         public string PersonName;
         public Job PlayerJob;
+        public Item item = new Item();
+
         // Both the player and npc's will need a list to hold items.
 
         /* TO DO:
@@ -24,6 +26,35 @@ namespace AdventureGame
          * Assign their chosen job to the PlayerJob variable.
          * Give certain properties to each of the jobs. 
          */
+
+
+        public List<Item> sorcererItems = new List<Item>()
+        {
+                new Item
+                {
+                    ItemName = "Wand",
+                    ItemDescription = "It may look like a simple stick, but it contains an abundance of magical potential",
+                },
+                new Item
+                {
+                    ItemName = "Book",
+                    ItemDescription = "Sorcerers know a lot of stuff, where better to put all that knowledge then a book!"
+                }
+        };
+        public string ShowItems(string job)
+        {
+            string output = "";
+            if (job == "Sorcerer")
+            {
+                output += "Inventory:\n";
+                foreach (Item i in sorcererItems)
+                {
+                    output += $"{i.ItemName} \n";
+                }
+                return output;
+            }
+            return output;
+        }
 
         public void SetupJob()
         {
