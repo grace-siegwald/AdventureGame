@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static AdventureGame.Utility;
 
 namespace AdventureGame
 {
@@ -38,7 +39,7 @@ namespace AdventureGame
                 new Item
                 {
                     ItemName = "Book",
-                    ItemDescription = "Sorcerers know a lot of stuff, where better to put all that knowledge then a book!"
+                    ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!"
                 }
         };
         public string ShowItems(string job)
@@ -58,7 +59,27 @@ namespace AdventureGame
 
         public void SetupJob()
         {
-
+            string input = Console.ReadLine();
+            int num = Convert.ToInt32(input);
+            if (num == 1)
+            {
+                PlayerJob = new Job();
+                PlayerJob = Job.Sorcerer;
+            }
+            if (num == 2)
+            {
+                PlayerJob = new Job();
+                PlayerJob = Job.Theif;
+            }
+            if (num == 3)
+            {
+                PlayerJob = new Job();
+                PlayerJob = Job.Knight;
+            }
+            else
+            {
+                Print($"\nPlease enter a valid number");
+            }
         }
 
         public void Equip(Item item)
