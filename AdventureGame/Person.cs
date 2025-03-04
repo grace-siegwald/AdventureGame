@@ -33,11 +33,13 @@ namespace AdventureGame
         {
                 new Item
                 {
+                    // Each jobs first item is their "practical" item. When you use it, you'll pretty much get what you expect.
                     ItemName = "Wand",
                     ItemDescription = "It may look like a simple stick, but it contains an abundance of magical potential. Use it to light your way",
                 },
                 new Item
                 {
+                    // Each jobs second item is their "fun" item. When you use it, you get something very unexpected!
                     ItemName = "Book",
                     ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!"
                 }
@@ -52,7 +54,7 @@ namespace AdventureGame
                 new Item
                 {
                     ItemName = "Lockpick",
-                    ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!"
+                    ItemDescription = "It may look unassuming, but in the hands of a thief, it's a potent tool."
                 }
         };
         public List<Item> bruteItems = new List<Item>()
@@ -65,17 +67,42 @@ namespace AdventureGame
                 new Item
                 {
                     ItemName = "Shield",
-                    ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!"
+                    ItemDescription = "A powerful protective tool... but what else can it do?"
                 }
         };
-        public void Equip(Item item)
-        {
-            // Code here to "equip" a wearable item.
-        }
+        //public void Equip(Item item)
+        //{
+        //    // Code here to "equip" a wearable item.
+        //}
 
         public void Use(Item item) 
         { 
-            // Code here to "use" an item.
+            if (item.ItemName == "Wand")
+            {
+                Print("use wand");
+            }
+            if (item.ItemName == "Book")
+            {
+                Print("use book");
+            }
+
+            if (item.ItemName == "Lighter")
+            {
+                Print("use lighter");
+            }
+            if (item.ItemName == "Lockpick")
+            {
+                Print("use lockpick");
+            }
+
+            if (item.ItemName == "Torch")
+            {
+                Print("use torch");
+            }
+            if (item.ItemName == "Shield")
+            {
+                Print("use shield");
+            }
         }
     }
 }

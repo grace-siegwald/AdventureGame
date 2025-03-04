@@ -22,7 +22,9 @@ namespace AdventureGame
 
         public void Visit(string job)
         {
-            Encounters encounter = new Encounters();
+            SorcererEncounters SorcererEncounter = new SorcererEncounters();
+            ThiefEncounters ThiefEncounter = new ThiefEncounters();
+            BruteEncounters BruteEncounter = new BruteEncounters();
             Console.Clear();
             // Print out name of where the player is.
             Print($"You have arrived at {LocationName}");
@@ -31,17 +33,17 @@ namespace AdventureGame
                 // Display specific encounter based on the prefix within the LocationName the player selected 
                 if (LocationName.StartsWith("Cave of"))
                 {
-                    encounter.GetRandomSorcererCaveEncounter();
+                    SorcererEncounter.GetRandomSorcererCaveEncounter();
                 }
 
                 if (LocationName.StartsWith("Village of"))
                 {
-                    encounter.GetRandomSorcererVillageEncounter();
+                    SorcererEncounter.GetRandomSorcererVillageEncounter();
                 }
 
                 if (LocationName.StartsWith("Forest of"))
                 {
-                    encounter.GetRandomSorcererForestEncounter();
+                    SorcererEncounter.GetRandomSorcererForestEncounter();
                 }
             }
 
@@ -49,17 +51,17 @@ namespace AdventureGame
             {
                 if (LocationName.StartsWith("Cave of"))
                 {
-                    encounter.GetRandomThiefCaveEncounter();
+                    ThiefEncounter.GetRandomThiefCaveEncounter();
                 }
 
                 if (LocationName.StartsWith("Village of"))
                 {
-                    encounter.GetRandomThiefVillageEncounter();
+                    ThiefEncounter.GetRandomThiefVillageEncounter();
                 }
 
                 if (LocationName.StartsWith("Forest of"))
                 {
-                    encounter.GetRandomThiefForestEncounter();
+                    ThiefEncounter.GetRandomThiefForestEncounter();
                 }
             }
 
@@ -67,17 +69,17 @@ namespace AdventureGame
             {
                 if (LocationName.StartsWith("Cave of"))
                 {
-                    encounter.GetRandomBruteCaveEncounter();
+                    BruteEncounter.GetRandomBruteCaveEncounter();
                 }
 
                 if (LocationName.StartsWith("Village of"))
                 {
-                    encounter.GetRandomBruteVillageEncounter();
+                    BruteEncounter.GetRandomBruteVillageEncounter();
                 }
 
                 if (LocationName.StartsWith("Forest of"))
                 {
-                    encounter.GetRandomBruteForestEncounter();
+                    BruteEncounter.GetRandomBruteForestEncounter();
                 }
             }
             Continue();

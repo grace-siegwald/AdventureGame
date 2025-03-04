@@ -13,7 +13,7 @@
  * - Find that location's "key item" through a unique encounter based on the class you chose.
  *         - This key item acquisition should be tied to a randomly chosen encounter 
  *           that occurs each time you enter that location.
- *         - Each class has 3 possible encounters per location
+ *         - Each class has 2 possible encounters per location
  * - Visit all locations and get all key items, and the final location reveals itself.
  * - Complete a final encounter (from a randomized pool of final encounters).
  * - Beat the game!
@@ -28,7 +28,6 @@
  *   "Castle" prefix
  *      - Final Area
  *      - Take the throne.
- *      
  */
 
 {
