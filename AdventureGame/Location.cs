@@ -7,44 +7,79 @@ using static AdventureGame.Utility;
 
 namespace AdventureGame
 {
-    enum AverageTempurature: byte
-    {
-        mountains = 20,
-        forest = 50,
-        grassland = 75,
-        desert = 90,
-        volcano = 120
-    }
-
     internal class Location
     {
         public string LocationName;
-        public AverageTempurature Tempurature = AverageTempurature.volcano;
+        public string FinalLocationName;
         // There will be items to be found.
         // NPC"s will be here too.
 
-        // Constuctors run when the instance is made. Constructors never have a return type. (void, static, etc)
+        // Constructors run when the instance is made. Constructors never have a return type. (void, static, etc)
         public Location() 
         {
 
         }   
 
-        public void Visit()
+        public void Visit(string job)
         {
+            Encounters encounter = new Encounters();
             Console.Clear();
             // Print out name of where the player is.
-            Utility.Print($"You have arrived at {LocationName}");
+            Print($"You have arrived at {LocationName}");
+            if (job == "Sorcerer")
+            {
+                // Display specific encounter based on the prefix within the LocationName the player selected 
+                if (LocationName.StartsWith("Cave of"))
+                {
+                    encounter.GetRandomSorcererCaveEncounter();
+                }
 
-            // NPC randomly appears (or dedicated?)?
+                if (LocationName.StartsWith("Village of"))
+                {
+                    encounter.GetRandomSorcererVillageEncounter();
+                }
 
-            // NPC has a request?
+                if (LocationName.StartsWith("Forest of"))
+                {
+                    encounter.GetRandomSorcererForestEncounter();
+                }
+            }
 
-            // Find a random item?
+            if (job == "Thief")
+            {
+                if (LocationName.StartsWith("Cave of"))
+                {
+                    encounter.GetRandomThiefCaveEncounter();
+                }
 
-            // Another activity?
+                if (LocationName.StartsWith("Village of"))
+                {
+                    encounter.GetRandomThiefVillageEncounter();
+                }
 
-            // Special event based on random number or probability?
+                if (LocationName.StartsWith("Forest of"))
+                {
+                    encounter.GetRandomThiefForestEncounter();
+                }
+            }
 
+            if (job == "Brute")
+            {
+                if (LocationName.StartsWith("Cave of"))
+                {
+                    encounter.GetRandomBruteCaveEncounter();
+                }
+
+                if (LocationName.StartsWith("Village of"))
+                {
+                    encounter.GetRandomBruteVillageEncounter();
+                }
+
+                if (LocationName.StartsWith("Forest of"))
+                {
+                    encounter.GetRandomBruteForestEncounter();
+                }
+            }
             Continue();
         }
     }

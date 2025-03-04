@@ -11,7 +11,7 @@ namespace AdventureGame
     {
         Sorcerer,
         Thief,
-        Knight
+        Brute
     }
     internal class Person
     {
@@ -34,7 +34,7 @@ namespace AdventureGame
                 new Item
                 {
                     ItemName = "Wand",
-                    ItemDescription = "It may look like a simple stick, but it contains an abundance of magical potential",
+                    ItemDescription = "It may look like a simple stick, but it contains an abundance of magical potential. Use it to light your way",
                 },
                 new Item
                 {
@@ -42,46 +42,32 @@ namespace AdventureGame
                     ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!"
                 }
         };
-        public string ShowItems(string job)
+        public List<Item> thiefItems = new List<Item>()
         {
-            string output = "";
-            if (job == "Sorcerer")
-            {
-                output += "Inventory:\n";
-                foreach (Item i in sorcererItems)
+                new Item
                 {
-                    output += $"{i.ItemName} \n";
+                    ItemName = "Lighter",
+                    ItemDescription = "A simple tool, but it's more handy then it looks! Use it to light your way",
+                },
+                new Item
+                {
+                    ItemName = "Lockpick",
+                    ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!"
                 }
-                return output;
-            }
-            return output;
-        }
-
-        public void SetupJob()
+        };
+        public List<Item> bruteItems = new List<Item>()
         {
-            string input = Console.ReadLine();
-            int num = Convert.ToInt32(input);
-            if (num == 1)
-            {
-                PlayerJob = new Job();
-                PlayerJob = Job.Sorcerer;
-            }
-            if (num == 2)
-            {
-                PlayerJob = new Job();
-                PlayerJob = Job.Thief;
-            }
-            if (num == 3)
-            {
-                PlayerJob = new Job();
-                PlayerJob = Job.Knight;
-            }
-            else
-            {
-                Print($"\nPlease enter a valid number");
-            }
-        }
-
+                new Item
+                {
+                    ItemName = "Torch",
+                    ItemDescription = "It may be primitive, but if it works, it works! Use it to light your way.",
+                },
+                new Item
+                {
+                    ItemName = "Shield",
+                    ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!"
+                }
+        };
         public void Equip(Item item)
         {
             // Code here to "equip" a wearable item.

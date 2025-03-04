@@ -8,6 +8,6 @@ namespace AdventureGame
 {
     internal class NPC:Person
     {
-
+        List<string> Names = new List<string>();
     }
 }

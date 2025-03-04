@@ -34,14 +34,13 @@ namespace AdventureGame
 
         public static void Continue()
         {
-            Print($"Press any key to continue");
+            Console.WriteLine("Press any key to continue");
             Console.ReadKey();
         }
-
-        public static int ConvertStringToInteger(string input)
+        public static void TryAgain()
         {
-            if (int.TryParse(input, out int result)) return result;
-            return -1;
+            Console.WriteLine("Press any key to try again");
+            Console.ReadKey();
         }
 
         public static void PrintWithColor(string wholeSentence, string colorWord, string color) 
@@ -156,13 +155,13 @@ namespace AdventureGame
                 }
                 else
                 {
-                    DefualtConsoleColor();
+                    DefaultConsoleColor();
                     Console.Write(word + " ");
                 }
             }
         }
 
-        public static void DefualtConsoleColor()
+        public static void DefaultConsoleColor()
         {
             Console.BackgroundColor = System.ConsoleColor.DarkGray;
             Console.ForegroundColor = System.ConsoleColor.White;

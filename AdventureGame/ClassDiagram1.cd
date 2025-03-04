@@ -3,21 +3,21 @@
   <Class Name="AdventureGame.Item">
     <Position X="7.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAACAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AdventureGame.Location">
-    <Position X="2" Y="3.25" Width="3" />
+    <Position X="1.75" Y="4.75" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAQAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Location.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AdventureGame.Person">
     <Position X="5.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAIAAAAAAAEAAAgAAAAAAAAAAI=</HashCode>
+      <HashCode>AIEAAAAAIAAAAAAAAAQIAAAAAAIEAAAiAAAAAAAAAAA=</HashCode>
       <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,29 +31,36 @@
   <Class Name="AdventureGame.Utility">
     <Position X="9.75" Y="0.5" Width="3" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAEAQAAAAAAAAAAAAAAAAgAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAAACAAAAAEAQAAAAAAAAAAAAAAAAAAAAAADAIAEAAA=</HashCode>
       <FileName>Utility.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AdventureGame.World">
     <Position X="2.75" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAACAAAAAAAAQAAAAACAACAAAABAAAAQAAAAAA=</HashCode>
+      <HashCode>AAIAAAAACCAAAAAAAQAAAAADAACAAAAJAAAAAABAAAI=</HashCode>
       <FileName>World.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AdventureGame.WearableItem">
-    <Position X="7.5" Y="2.25" Width="2" />
+    <Position X="7.5" Y="3" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAA=</HashCode>
       <FileName>WearableItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AdventureGame.NPC">
-    <Position X="5.5" Y="3" Width="1.5" />
+    <Position X="5.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>NPC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdventureGame.Encounters">
+    <Position X="2.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QAAQAAAAAAAAAAAIAAAAAAAAAAAEAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Encounters.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
