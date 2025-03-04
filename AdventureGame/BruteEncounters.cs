@@ -30,11 +30,11 @@ namespace AdventureGame
             int num = GetRandomNumber(1, 3);
             if (num == 1)
             {
-                BruteVillageEncounters(1);
+                Print(BruteVillageEncounters(1));
             }
             if (num == 2)
             {
-                BruteVillageEncounters(2);
+                Print(BruteVillageEncounters(2));
             }
         }
         public void GetRandomBruteForestEncounter()
@@ -42,11 +42,11 @@ namespace AdventureGame
             int num = GetRandomNumber(1, 3);
             if (num == 1)
             {
-                BruteForestEncounters(1);
+                Print(BruteForestEncounters(1));
             }
             if (num == 2)
             {
-                BruteForestEncounters(2);
+                Print(BruteForestEncounters(2));
             }
         }
 
@@ -57,11 +57,11 @@ namespace AdventureGame
             switch (variation)
             {
                 case 1:
-                    output += "brute encounter one";
+                    output += "brute cave encounter one";
                     break;
 
                 case 2:
-                    output += "brute encounter two";
+                    output += "brute cave encounter two";
                     break;
             }
             return output;
@@ -73,11 +73,11 @@ namespace AdventureGame
             switch (variation)
             {
                 case 1:
-                    output += "brute encounter one";
+                    output += "brute village encounter one";
                     break;
 
                 case 2:
-                    output += "brute encounter two";
+                    output += "brute village encounter two";
                     break;
             }
             return output;
@@ -88,11 +88,11 @@ namespace AdventureGame
             switch (variation)
             {
                 case 1:
-                    output += "brute encounter one";
+                    output += "brute forest encounter one";
                     break;
 
                 case 2:
-                    output += "brute encounter two";
+                    output += "brute forest encounter two";
                     break;
             }
             return output;

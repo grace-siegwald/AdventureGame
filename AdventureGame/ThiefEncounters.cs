@@ -31,11 +31,11 @@ namespace AdventureGame
             int num = GetRandomNumber(1, 3);
             if (num == 1)
             {
-                ThiefVillageEncounters(1);
+                Print(ThiefVillageEncounters(1));
             }
             if (num == 2)
             {
-                ThiefVillageEncounters(2);
+                Print(ThiefVillageEncounters(2));
             }
         }
         public void GetRandomThiefForestEncounter()
@@ -43,11 +43,11 @@ namespace AdventureGame
             int num = GetRandomNumber(1, 3);
             if (num == 1)
             {
-                ThiefForestEncounters(1);
+                Print(ThiefForestEncounters(1));
             }
             if (num == 2)
             {
-                ThiefForestEncounters(2);
+                Print(ThiefForestEncounters(2));
             }
         }
 
@@ -58,11 +58,11 @@ namespace AdventureGame
             switch (variation)
             {
                 case 1:
-                    output += "thief encounter one";
+                    output += "thief cave encounter one";
                     break;
 
                 case 2:
-                    output += "thief encounter two";
+                    output += "thief cave encounter two";
                     break;
             }
             return output;
@@ -74,11 +74,11 @@ namespace AdventureGame
             switch (variation)
             {
                 case 1:
-                    output += "thief encounter one";
+                    output += "thief village encounter one";
                     break;
 
                 case 2:
-                    output += "thief encounter two";
+                    output += "thief village encounter two";
                     break;
             }
             return output;
@@ -89,11 +89,11 @@ namespace AdventureGame
             switch (variation)
             {
                 case 1:
-                    output += "thief encounter one";
+                    output += "thief forest encounter one";
                     break;
 
                 case 2:
-                    output += "thief encounter two";
+                    output += "thief forest encounter two";
                     break;
             }
             return output;

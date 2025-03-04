@@ -32,11 +32,11 @@ namespace AdventureGame
             int num = GetRandomNumber(1, 3);
             if (num == 1)
             {
-                SorcererVillageEncounters(1);
+                Print(SorcererVillageEncounters(1));
             }
             if (num == 2)
             {
-                SorcererVillageEncounters(2);
+                Print(SorcererVillageEncounters(2));
             }
         }
         public void GetRandomSorcererForestEncounter()
@@ -44,11 +44,11 @@ namespace AdventureGame
             int num = GetRandomNumber(1, 3);
             if (num == 1)
             {
-                SorcererForestEncounters(1);
+                Print(SorcererForestEncounters(1));
             }
             if (num == 2)
             {
-                SorcererForestEncounters(2);
+                Print(SorcererForestEncounters(2));
             }
         }
         
@@ -64,7 +64,7 @@ namespace AdventureGame
                     break;
 
                 case 2:
-                    output += "sorcerer encounter two";
+                    output += "sorcerer cave encounter two";
                     break;
             }
             return output;
@@ -76,11 +76,11 @@ namespace AdventureGame
             switch (variation)
             {
                 case 1:
-                    output += "sorcerer encounter one";
+                    output += "sorcerer village encounter one";
                     break;
 
                 case 2:
-                    output += "sorcerer encounter two";
+                    output += "sorcerer village encounter two";
                     break;
             }
             return output;
@@ -91,11 +91,11 @@ namespace AdventureGame
             switch (variation)
             {
                 case 1:
-                    output += "sorcerer encounter one";
+                    output += "sorcerer forest encounter one";
                     break;
 
                 case 2:
-                    output += "sorcerer encounter two";
+                    output += "sorcerer forest encounter two";
                     break;
             }
             return output;
