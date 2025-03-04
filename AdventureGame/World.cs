@@ -15,6 +15,7 @@ namespace AdventureGame
         public string WorldName = "Randomazo";
 
         List<Location> locations = new List<Location>();
+        Location[,] map;
         
         // Player
         // The world "has a" player.

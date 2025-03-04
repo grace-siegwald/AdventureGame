@@ -31,7 +31,18 @@ namespace AdventureGame
         {
             Console.WriteLine(message);
         }
+        public static string GetArrayOfTextFromExternalFile(string path)
+        {
+            string[] output;
+            if (File.Exists(path))
+            {
+                // everything is great!
+                output = File.ReadAllLines(path);
+            }
 
+            // if it's null, we know it didn't find any info. If it's not null, we know it worked!
+            return null;
+        }
         public static void Continue()
         {
             Console.WriteLine("Press any key to continue");
