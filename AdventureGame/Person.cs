@@ -34,7 +34,7 @@ namespace AdventureGame
                 PrintWithColor($"\n{item.ItemDescription} ", item.ItemDescription, "Black");
             }
         }
-
+        
         public void AddItemToInventory(string item)
         {
             if (item == "Wand")
@@ -83,6 +83,27 @@ namespace AdventureGame
                 {
                     ItemName = "Shield",
                     ItemDescription = "A powerful protective tool... but what else can it do?",
+                });
+            }
+            if (item == "Red Key"){
+                playerInventory.Add(new Item
+                {
+                    ItemName = "Red Key",
+                    ItemDescription = ""
+                });
+            }
+            if (item == "Red Key"){
+                playerInventory.Add(new Item
+                {
+                    ItemName = "Green Key",
+                    ItemDescription = ""
+                });
+            }
+            if (item == "Red Key"){
+                playerInventory.Add(new Item
+                {
+                    ItemName = "Blue Key",
+                    ItemDescription = ""
                 });
             }
         }
