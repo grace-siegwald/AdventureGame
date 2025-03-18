@@ -48,11 +48,14 @@ namespace AdventureGame
         {
             Console.Clear();
             PrintWithColor($"{player.PlayerName}, welcome to the world of {WorldName} !\n" +
-                $"In {WorldName} , everywhere you go, everything you see, and every item you find is randomized.\n", WorldName, "DarkMagenta");
+                $"In {WorldName} , everywhere you go, everything you see, and every item you find is randomized.\n", WorldName, "Black");
 
-            PrintWithColor($"\nHere in {WorldName} ,", WorldName, "DarkMagenta");
-            PrintWithColor("there are three Jobs  to choose from. Each will give you a unique gameplay experience.\n", "Jobs", "DarkMagenta");
-            
+            PrintWithColor($"\nHere in {WorldName} ,", WorldName, "Black");
+            PrintWithColor("there are three Jobs  to choose from. Each will give you a uniquely random gameplay experience!\n", "Jobs", "Black");
+
+            PrintWithColor($"\n 1) The Sorcerer \n", "Sorcerer", "DarkMagenta");
+            PrintWithColor($"2) The Thief \n", "Thief", "DarkGreen");
+            PrintWithColor($"3) The Brute \n", "Brute", "DarkBlue");
 
             Print("\nTo choose your Job, input its corresponding number");
             SetJob();
@@ -70,29 +73,25 @@ namespace AdventureGame
                         case 1:
                             player.PlayerJob = Job.Sorcerer;
                             // Add the Wand and the Book into the player's inventory
-                            player.playerInventory.Add(new Item
-                            {
-                                ItemName = "Wand",
-                                ItemDescription = "It may look like a simple stick, but it contains an abundance of magical potential. Use it to light your way",
-                            });
-                            player.playerInventory.Add(new Item
-                            {
-                                ItemName = "Book",
-                                ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!"
-                            });
-                            Print($"You are now a {player.PlayerJob}!");
+                            player.AddItemToInventory("Wand");
+                            player.AddItemToInventory("Book");
+                            PrintWithColor($"\nYou are now a {player.PlayerJob} !", $"{player.PlayerJob}", "DarkMagenta"); 
                             break;
 
                         case 2:
                             player.PlayerJob = Job.Thief;
                             // Add the Lighter and the Lockpick to the player's inventory
-                            Print($"You are now a {player.PlayerJob}!");
+                            player.AddItemToInventory("Lighter");
+                            player.AddItemToInventory("Lockpick");
+                            PrintWithColor($"\nYou are now a {player.PlayerJob} !", $"{player.PlayerJob}", "DarkGreen");
                             break;
 
                         case 3:
                             player.PlayerJob = Job.Brute;
                             // Add the Torch and the Shield to the player's inventory 
-                            Print($"You are now a {player.PlayerJob}!");
+                            player.AddItemToInventory("Torch");
+                            player.AddItemToInventory("Shield");
+                            PrintWithColor($"\nYou are now a {player.PlayerJob} !", $"{player.PlayerJob}", "DarkBlue");
                             break;
                     }
                 }
@@ -109,20 +108,27 @@ namespace AdventureGame
                 TryAgain();
                 ChooseJob();
             }
+            PrintWithColor($"\nEach class has a set of unique Items. Make sure to check your Inventory  to see what they are!\n\n", "Inventory", "Black");
             Continue();
             GameLoop();
         }
         private void GameLoop()
         {
             Console.Clear();
-            Print("Where would you like to go? Enter a number to go to the location\n");
-            Print(GetLocationList());
+            //Print("Where would you like to go? Enter a number to go to the location\n");
+
+            PrintWithColor($"Welcome to the Overworld ! Travel to a location by entering it's corresponding number.\n", "Overworld", "Green");
+            PrintWithColor($"To check your Inventory , type 'I'\n\n", "Inventory", "Black");
+
+            Print(LocationList());
             
             string choice = Console.ReadLine();
+            if (choice == "I")
+            {
+                player.DisplayInventory();
+            }
             if (int.TryParse(choice, out int result))
             {
-                // && is "and", || is "or", ! is "not", != is "not equal"
-
                 if (result > 0 && result <= locations.Count)
                 {
                     locations[result - 1].Visit($"{player.PlayerJob}");
@@ -133,12 +139,11 @@ namespace AdventureGame
                     TryAgain();
                     GameLoop();
                     // This is a recursive call to the GameLoop method. It's recursive because it's inside the method it's calling. 
-                    //GameLoop();
                 }
             }
             else
             {
-                Print("Please Enter a valid number");
+                Print("Please Enter a valid input");
                 TryAgain();
                 GameLoop();
             }
@@ -159,7 +164,7 @@ namespace AdventureGame
                 names.RemoveAt(nameNumber);
             }
          }
-        private string GetLocationList()
+        private string LocationList()
         {
             string output = "Locations in the world:\n";
             int number = 1;

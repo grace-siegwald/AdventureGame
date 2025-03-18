@@ -45,7 +45,7 @@ namespace AdventureGame
         }
         public static void Continue()
         {
-            Console.WriteLine("Press any key to continue");
+            Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
         public static void TryAgain()
