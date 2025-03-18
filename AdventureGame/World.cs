@@ -51,52 +51,13 @@ namespace AdventureGame
                 $"In {WorldName} , everywhere you go, everything you see, and every item you find is randomized.\n", WorldName, "DarkMagenta");
 
             PrintWithColor($"\nHere in {WorldName} ,", WorldName, "DarkMagenta");
-            PrintWithColor("there are three Jobs  to choose from. Each will give you a unique gameplay experience.\n", "Jobs", "Black");
-            Print(PrintJobList("Sorcerer"));
-            Print(PrintJobList("Thief"));
-            Print(PrintJobList("Brute"));
+            PrintWithColor("there are three Jobs  to choose from. Each will give you a unique gameplay experience.\n", "Jobs", "DarkMagenta");
+            
 
             Print("\nTo choose your Job, input its corresponding number");
             SetJob();
         }
-        public string PrintJobList(string job)
-        {
-            string output = "";
-            if (job == "Sorcerer")
-            {
-                output += "\n   1) Sorcerer:\n";
-                output += "         Items:";
-                foreach (Item i in player.sorcererItems)
-                {
-                    output += $"\n              {i.ItemName} \n" +
-                        $"              {i.ItemDescription}";
-                }
-                return output;
-            }
-            if (job == "Thief")
-            {
-                output += "    2) Thief:\n";
-                output += "         Items:";
-                foreach (Item i in player.thiefItems)
-                {
-                    output += $"\n              {i.ItemName} \n" +
-                        $"              {i.ItemDescription}";
-                }
-                return output;
-            }
-            if (job == "Brute")
-            {
-                output += "    3) Brute:\n";
-                output += "         Items:";
-                foreach (Item i in player.bruteItems)
-                {
-                    output += $"\n              {i.ItemName} \n" +
-                        $"              {i.ItemDescription}";
-                }
-                return output;
-            }
-            return output;
-        }
+        
         public void SetJob()
         {
             string input = Console.ReadLine();
@@ -107,20 +68,30 @@ namespace AdventureGame
                     switch (choice)
                     {
                         case 1:
-                            new Job();
                             player.PlayerJob = Job.Sorcerer;
+                            // Add the Wand and the Book into the player's inventory
+                            player.playerInventory.Add(new Item
+                            {
+                                ItemName = "Wand",
+                                ItemDescription = "It may look like a simple stick, but it contains an abundance of magical potential. Use it to light your way",
+                            });
+                            player.playerInventory.Add(new Item
+                            {
+                                ItemName = "Book",
+                                ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!"
+                            });
                             Print($"You are now a {player.PlayerJob}!");
                             break;
 
                         case 2:
-                            new Job();
                             player.PlayerJob = Job.Thief;
+                            // Add the Lighter and the Lockpick to the player's inventory
                             Print($"You are now a {player.PlayerJob}!");
                             break;
 
                         case 3:
-                            new Job();
                             player.PlayerJob = Job.Brute;
+                            // Add the Torch and the Shield to the player's inventory 
                             Print($"You are now a {player.PlayerJob}!");
                             break;
                     }
