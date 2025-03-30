@@ -12,7 +12,7 @@ namespace AdventureGame
     {
         Sorcerer,
         Thief,
-        Brute
+        Bard
     }
     internal class Person
     {
@@ -23,7 +23,7 @@ namespace AdventureGame
 
         // Both the player and npc's will need a list to hold items.
         public List<Item> playerInventory = new List<Item>();
-
+ 
         public void DisplayInventory()
         {
             Console.Clear();
@@ -37,52 +37,52 @@ namespace AdventureGame
         
         public void AddItemToInventory(string item)
         {
-            if (item == "Wand")
+            if (item == "Wand of Wonder")
             {
                 playerInventory.Add(new Item
                 {
                     ItemName = "Wand",
-                    ItemDescription = "It may look like a simple stick, but it contains an abundance of magical potential. Use it to light your way",
+                    ItemDescription = "This wonderful little stick contains an an abundance of magical potential!",
                 });
             }
-            if (item == "Book")
+            if (item == "Never-ending Grimoire")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Book",
-                    ItemDescription = "Sorcerers know a lot of stuff, where else would you put all that knowledge!",
+                    ItemName = "Grimoire",
+                    ItemDescription = "This peculiar book contains all the spells a sorcerer could ask for... literally",
                 });
             }
-            if (item == "Lighter")
+            if (item == "Cloak of Invisibility")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Lighter",
-                    ItemDescription = "A simple tool, but it's more handy then it looks! Use it to light your way",
+                    ItemName = "Cloak",
+                    ItemDescription = "Cloaks like these are what separate a skilled thief from... a thief in jail!",
                 });
             }
-            if (item == "Lockpick")
+            if (item == "Mischievous Gloves of Thievery")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Lockpick",
-                    ItemDescription = "It may look unassuming, but in the hands of a thief, it's a potent tool.",
+                    ItemName = "Gloves",
+                    ItemDescription = "With these gloves, the hands if a pickpocket are completely undetectable",
                 });
             }
-            if (item == "Torch")
+            if (item == "Adorned Lute")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Torch",
-                    ItemDescription = "It may be primitive, but if it works, it works! Use it to light your way.",
+                    ItemName = "Lute",
+                    ItemDescription = "The chosen 'tool' of a bard like yourself. It sure can play some beautiful tunes!",
                 });
             }
-            if (item == "Shield")
+            if (item == "Feathered Hat")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Shield",
-                    ItemDescription = "A powerful protective tool... but what else can it do?",
+                    ItemName = "Hat",
+                    ItemDescription = "Nobody wants to listen to a bard with no style! Very stylish, indeed...",
                 });
             }
             if (item == "Red Key"){

@@ -22,67 +22,94 @@ namespace AdventureGame
 
         public void Visit(string job)
         {
-            SorcererEncounters SorcererEncounter = new SorcererEncounters();
-            ThiefEncounters ThiefEncounter = new ThiefEncounters();
-            BruteEncounters BruteEncounter = new BruteEncounters();
             Console.Clear();
             // Print out name of where the player is.
             Print($"You have arrived at {LocationName}");
-            if (job == "Sorcerer")
+
+            // Display specific encounter based on the prefix within the LocationName the player selected 
+            if (LocationName.StartsWith("Cave of"))
             {
-                // Display specific encounter based on the prefix within the LocationName the player selected 
-                if (LocationName.StartsWith("Cave of"))
-                {
-                    SorcererEncounter.GetRandomSorcererCaveEncounter();
-                }
-
-                if (LocationName.StartsWith("Village of"))
-                {
-                    SorcererEncounter.GetRandomSorcererVillageEncounter();
-                }
-
-                if (LocationName.StartsWith("Forest of"))
-                {
-                    SorcererEncounter.GetRandomSorcererForestEncounter();
-                }
+                CaveEncounter(job);
             }
 
-            if (job == "Thief")
+            if (LocationName.StartsWith("Village of"))
             {
-                if (LocationName.StartsWith("Cave of"))
-                {
-                    ThiefEncounter.GetRandomThiefCaveEncounter();
-                }
-
-                if (LocationName.StartsWith("Village of"))
-                {
-                    ThiefEncounter.GetRandomThiefVillageEncounter();
-                }
-
-                if (LocationName.StartsWith("Forest of"))
-                {
-                    ThiefEncounter.GetRandomThiefForestEncounter();
-                }
+                VillageEncounter(job);
             }
 
-            if (job == "Brute")
+            if (LocationName.StartsWith("Forest of"))
             {
-                if (LocationName.StartsWith("Cave of"))
-                {
-                    BruteEncounter.GetRandomBruteCaveEncounter();
-                }
-
-                if (LocationName.StartsWith("Village of"))
-                {
-                    BruteEncounter.GetRandomBruteVillageEncounter();
-                }
-
-                if (LocationName.StartsWith("Forest of"))
-                {
-                    BruteEncounter.GetRandomBruteForestEncounter();
-                }
+                ForestEncounter(job);
             }
+
             Continue();
+        }
+
+        // Sorcerer Encounters
+        public void CaveEncounter(string Job)
+        {
+            Console.Clear();
+            if (Job == "Sorcerer")
+            {
+                PrintWithColor($"You step into the mouth an important looking cave. Its walls are covered in brilliant red crystals. " +
+                $"As you walk deeper, the light from the outside becomes dimmer, until eventually you cannot see a thing!" +
+                $"\n\nPerhaps you could use your handy wand  to help your way? If you don't know how, type 'I' to enter your inventory", "wand", "Black");
+                string input = Console.ReadLine();
+                if (input == "Use Wand")
+                {
+                    Print($"\n\n You cast a light spell! A pebble of light quickly flutters from your wand traveling upwards ");
+                }
+                if (input == "Use Grimoire")
+                {
+
+                }
+                else
+                {
+                    Print("Please enter a valid input");
+                    TryAgain();
+                    CaveEncounter("Sorcerer");
+                }
+            }
+            if (Job == "Thief")
+            {
+                Print(Job);
+            }
+            if (Job == "Bard")
+            {
+                Print(Job);
+            }
+        }
+        public void VillageEncounter(string Job)
+        {
+            Console.Clear();
+            if (Job == "Sorcerer")
+            {
+                Print(Job);
+            }
+            if (Job == "Thief")
+            {
+                Print(Job);
+            }
+            if (Job == "Bard")
+            {
+                Print(Job);
+            }
+        }
+        public void ForestEncounter(string Job)
+        {
+            Console.Clear();
+            if (Job == "Sorcerer")
+            {
+                Print(Job);
+            }
+            if (Job == "Thief")
+            {
+                Print(Job);
+            }
+            if (Job == "Bard")
+            {
+                Print(Job);
+            }
         }
     }
 }

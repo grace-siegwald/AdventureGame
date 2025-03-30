@@ -87,7 +87,7 @@ namespace AdventureGame
                             break;
 
                         case 3:
-                            player.PlayerJob = Job.Brute;
+                            player.PlayerJob = Job.Bard;
                             // Add the Torch and the Shield to the player's inventory 
                             player.AddItemToInventory("Torch");
                             player.AddItemToInventory("Shield");
@@ -175,18 +175,18 @@ namespace AdventureGame
                 number++;
             }
 
-            //if player has all three keys
-            //{
-            //    locations.Add(new Location() { LocationName = $"Castle of Intention" });
-            //    output += $"    4) Castle of Intention\n";
-            //}
-            
-            //else
-            //{
-            //    output += $"    4) Castle of Intention\n" +
-            //        $"         The castle is locked. Find all three keys to enter.";
-            //}
-            
+            if (player.playerInventory.Count == 5)
+            {
+                locations.Add(new Location() { LocationName = $"Castle of Intention" });
+                output += $"    4) Castle of Intention\n" +
+                    $"         Could the castle be unlocked now...?";
+            }
+            else
+            {
+                output += $"    4) Castle of Intention\n" +
+                    $"         The castle is locked. Find all three keys to enter!";
+            }
+
             return output;
         }
     }
