@@ -92,14 +92,14 @@ namespace AdventureGame
                     ItemDescription = ""
                 });
             }
-            if (item == "Red Key"){
+            if (item == "Green Key"){
                 playerInventory.Add(new Item
                 {
                     ItemName = "Green Key",
                     ItemDescription = ""
                 });
             }
-            if (item == "Red Key"){
+            if (item == "Blue Key"){
                 playerInventory.Add(new Item
                 {
                     ItemName = "Blue Key",
