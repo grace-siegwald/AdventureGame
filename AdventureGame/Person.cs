@@ -37,51 +37,51 @@ namespace AdventureGame
         
         public void AddItemToInventory(string item)
         {
-            if (item == "Wand of Wonder")
+            if (item == "Wand")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Wand",
+                    ItemName = "Wand of Wonder",
                     ItemDescription = "This wonderful little stick contains an an abundance of magical potential!",
                 });
             }
-            if (item == "Never-ending Grimoire")
+            if (item == "Grimoire")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Grimoire",
+                    ItemName = "Never-ending Grimoire",
                     ItemDescription = "This peculiar book contains all the spells a sorcerer could ask for... literally",
                 });
             }
-            if (item == "Cloak of Invisibility")
+            if (item == "Cloak")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Cloak",
+                    ItemName = "Cloak of Invisibility",
                     ItemDescription = "Cloaks like these are what separate a skilled thief from... a thief in jail!",
                 });
             }
-            if (item == "Mischievous Gloves of Thievery")
+            if (item == "Gloves")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Gloves",
+                    ItemName = "Mischievous Gloves of Thievery",
                     ItemDescription = "With these gloves, the hands if a pickpocket are completely undetectable",
                 });
             }
-            if (item == "Adorned Lute")
+            if (item == "Lute")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Lute",
+                    ItemName = "Adorned Lute",
                     ItemDescription = "The chosen 'tool' of a bard like yourself. It sure can play some beautiful tunes!",
                 });
             }
-            if (item == "Feathered Hat")
+            if (item == "Hat")
             {
                 playerInventory.Add(new Item
                 {
-                    ItemName = "Hat",
+                    ItemName = "Feathered Hat",
                     ItemDescription = "Nobody wants to listen to a bard with no style! Very stylish, indeed...",
                 });
             }

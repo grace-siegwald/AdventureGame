@@ -55,7 +55,7 @@ namespace AdventureGame
 
             PrintWithColor($"\n 1) The Sorcerer \n", "Sorcerer", "DarkMagenta");
             PrintWithColor($"2) The Thief \n", "Thief", "DarkGreen");
-            PrintWithColor($"3) The Brute \n", "Brute", "DarkBlue");
+            PrintWithColor($"3) The Bard \n", "Bard", "DarkBlue");
 
             Print("\nTo choose your Job, input its corresponding number");
             SetJob();
@@ -74,23 +74,23 @@ namespace AdventureGame
                             player.PlayerJob = Job.Sorcerer;
                             // Add the Wand and the Book into the player's inventory
                             player.AddItemToInventory("Wand");
-                            player.AddItemToInventory("Book");
+                            player.AddItemToInventory("Grimoire");
                             PrintWithColor($"\nYou are now a {player.PlayerJob} !", $"{player.PlayerJob}", "DarkMagenta"); 
                             break;
 
                         case 2:
                             player.PlayerJob = Job.Thief;
                             // Add the Lighter and the Lockpick to the player's inventory
-                            player.AddItemToInventory("Lighter");
-                            player.AddItemToInventory("Lockpick");
+                            player.AddItemToInventory("Cloak");
+                            player.AddItemToInventory("Gloves");
                             PrintWithColor($"\nYou are now a {player.PlayerJob} !", $"{player.PlayerJob}", "DarkGreen");
                             break;
 
                         case 3:
                             player.PlayerJob = Job.Bard;
                             // Add the Torch and the Shield to the player's inventory 
-                            player.AddItemToInventory("Torch");
-                            player.AddItemToInventory("Shield");
+                            player.AddItemToInventory("Lute");
+                            player.AddItemToInventory("Hat");
                             PrintWithColor($"\nYou are now a {player.PlayerJob} !", $"{player.PlayerJob}", "DarkBlue");
                             break;
                     }
@@ -131,7 +131,7 @@ namespace AdventureGame
             {
                 if (result > 0 && result <= locations.Count)
                 {
-                    locations[result - 1].Visit($"{player.PlayerJob}");
+                    locations[result - 1].Visit($"{player.PlayerJob}", player.playerInventory);
                 }
                 else
                 {

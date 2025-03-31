@@ -177,5 +177,14 @@ namespace AdventureGame
             Console.BackgroundColor = System.ConsoleColor.DarkGray;
             Console.ForegroundColor = System.ConsoleColor.White;
         }
+        
+        // This method was written by ChatGPT
+        public static void ClearLine(int line)
+        {
+            int currentLine = Console.CursorTop; // Store current cursor position
+            Console.SetCursorPosition(0, line);
+            Console.Write(new string(' ', Console.WindowWidth)); // Overwrite with spaces
+            Console.SetCursorPosition(0, currentLine); // Restore cursor position
+        }
     }
 }
