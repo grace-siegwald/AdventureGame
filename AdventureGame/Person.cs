@@ -50,7 +50,7 @@ namespace AdventureGame
                 playerInventory.Add(new Item
                 {
                     ItemName = "Never-ending Grimoire",
-                    ItemDescription = "This peculiar book contains all the spells a sorcerer could ask for... literally",
+                    ItemDescription = "This peculiar book contains all the incantations a sorcerer could ask for... literally",
                 });
             }
             if (item == "Cloak")
