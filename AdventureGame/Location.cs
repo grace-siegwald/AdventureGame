@@ -54,23 +54,28 @@ namespace AdventureGame
             {
                 Print($"You step into the mouth of {LocationName}. Its walls are covered in brilliant red crystals. " +
                 $"As you walk deeper, the light from the outside becomes dimmer, until eventually you cannot see a thing!");
-            choice1:
-                Print(DisplayItemChoices(playerInventory));
-                string choice = Console.ReadLine();
-                if (int.TryParse(choice, out int i))
+                choice1:
+                DisplayItemChoices(playerInventory);
+                // Write Method in utility that takes the players choice input and converts it.
+                string choice1 = Console.ReadLine();
+                if (int.TryParse(choice1, out int Choice1))
                 {
-                    if (i == 1)
+                    if (Choice1 == 1)
                     {
                         PrintWithColor("You use your wand to light  up the room!", "light", "Yellow");
                         Print($"\n\nA flicker of light sprouts from the tip of your wand. You're standing in a large grey cavern. It's been stripped of the beautiful red crystals that lined the caves entrance.");
                         PrintWithColor("Before you stands a pile of those very red crystals. Atop this pile sits the Red ", "Red", "Red");
-                        PrintWithColor("Key .", "Key", "Red");
-                        Print("Will you..." +
-                            "\n1) Take the Key!" +
-                            "\n2) Look around some more...");
+                        PrintWithColor("Key .\n", "Key", "Red");
+                        choice2:
+                        List<string> choices2 = new List<string>() { "Take the Key!", "Look around some more..." };
+                        DisplayChoices(choices2);
+                        string choice2 = Console.ReadLine();
+                        if (int.TryParse(choice2, out int Choice2))
+                        {
 
+                        }
                     }
-                    if (i == 2)
+                    if (Choice1 == 2)
                     {
                         Print("You open the Grimoire to look for an incantation, but can't read anything because it's... dark. Perhaps the wand might be simpler?");
                         TryAgain();
@@ -125,24 +130,6 @@ namespace AdventureGame
             {
                 Print(Job);
             }
-        }
-        public string DisplayItemChoices(List<Item> playerInventory)
-        {
-            string output = "\n:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
-            output += "\n       Will you...\n";
-            int i = 1;
-            foreach (Item item in playerInventory)
-            {
-                output += $"            {i}) Use {item.ItemName}\n";
-                i++;
-            }
-            output += ":*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
-            return output;
-        }
-        public string DisplayChoices(List<string> Choices)
-        {
-            string output = "";
-            return output;
         }
     }
 }

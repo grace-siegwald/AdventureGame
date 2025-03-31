@@ -177,7 +177,40 @@ namespace AdventureGame
             Console.BackgroundColor = System.ConsoleColor.DarkGray;
             Console.ForegroundColor = System.ConsoleColor.White;
         }
-        
+
+
+        public static void DisplayItemChoices(List<Item> playerInventory)
+        {
+            Console.ForegroundColor = ConsoleColor.Black;
+            string output = "\n:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
+            output += "\n       Will you...\n";
+            int i = 1;
+            foreach (Item item in playerInventory)
+            {
+                output += $"            {i}) Use {item.ItemName}\n";
+                i++;
+            }
+            output += ":*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
+            Print(output);
+            DefaultConsoleColor();
+        }
+        public static void DisplayChoices(List<string> Choices)
+        {
+            Console.ForegroundColor = ConsoleColor.Black;
+            string output = "\n:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
+            output += "\n       Will you...\n";
+            int i = 1;
+            foreach (string choice in Choices) 
+            {
+                output += $"            {i}) {choice}\n";
+                i++;
+            }
+            output += ":*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
+            Print(output);
+            DefaultConsoleColor();
+        }
+
+
         // This method was written by ChatGPT
         public static void ClearLine(int line)
         {
