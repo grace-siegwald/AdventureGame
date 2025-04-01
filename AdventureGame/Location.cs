@@ -12,8 +12,7 @@ namespace AdventureGame
     {
         public string LocationName;
         public string FinalLocationName;
-        // There will be items to be found.
-        // NPC"s will be here too.
+        public virtual void VisitCave(string Job, List<Item> playerInventory) { }
 
         // Constructors run when the instance is made. Constructors never have a return type. (void, static, etc)
         public Location()
@@ -30,106 +29,20 @@ namespace AdventureGame
             // Display specific encounter based on the prefix within the LocationName the player selected 
             if (LocationName.StartsWith("Cave of"))
             {
-                Cave(job, playerInventory);
+                new Cave().VisitCave(job, playerInventory);
             }
 
             if (LocationName.StartsWith("Village of"))
             {
-                Village(job, playerInventory);
+                new Village().VisitVillage(job, playerInventory);
             }
 
             if (LocationName.StartsWith("Forest of"))
             {
-                Forest(job, playerInventory);
+                new Forest().VisitForest(job, playerInventory);
             }
 
             Continue();
-        }
-
-        // Sorcerer Encounters
-        public void Cave(string Job, List<Item> playerInventory)
-        {
-            Console.Clear();
-            if (Job == "Sorcerer")
-            {
-                Print($"You step into the mouth of {LocationName}. Its walls are covered in brilliant red crystals. " +
-                $"As you walk deeper, the light from the outside becomes dimmer, until eventually you cannot see a thing!");
-                choice1:
-                DisplayItemChoices(playerInventory);
-                // Write Method in utility that takes the players choice input and converts it.
-                string choice1 = Console.ReadLine();
-                if (int.TryParse(choice1, out int Choice1))
-                {
-                    if (Choice1 == 1)
-                    {
-                        PrintWithColor("You use your wand to light  up the room!", "light", "Yellow");
-                        Print($"\n\nA flicker of light sprouts from the tip of your wand. You're standing in a large grey cavern. It's been stripped of the beautiful red crystals that lined the caves entrance.");
-                        PrintWithColor("Before you stands a pile of those very red crystals. Atop this pile sits the Red ", "Red", "Red");
-                        PrintWithColor("Key .\n", "Key", "Red");
-                        choice2:
-                        List<string> choices2 = new List<string>() { "Take the Key!", "Look around some more..." };
-                        DisplayChoices(choices2);
-                        string choice2 = Console.ReadLine();
-                        if (int.TryParse(choice2, out int Choice2))
-                        {
-
-                        }
-                    }
-                    if (Choice1 == 2)
-                    {
-                        Print("You open the Grimoire to look for an incantation, but can't read anything because it's... dark. Perhaps the wand might be simpler?");
-                        TryAgain();
-                        goto choice1;
-                    }
-                    else
-                    {
-                        Print("Please enter a valid input");
-                        TryAgain();
-                        goto choice1;
-                        // This is a recursive call to the GameLoop method. It's recursive because it's inside the method it's calling. 
-                    }
-                }
-            }
-            if (Job == "Thief")
-            {
-                Print(Job);
-            }
-            if (Job == "Bard")
-            {
-                Print(Job);
-            }
-        }
-        public void Village(string Job, List<Item> playerInventory)
-        {
-            Console.Clear();
-            if (Job == "Sorcerer")
-            {
-                Print(Job);
-            }
-            if (Job == "Thief")
-            {
-                Print(Job);
-            }
-            if (Job == "Bard")
-            {
-                Print(Job);
-            }
-        }
-        public void Forest(string Job, List<Item> playerInventory)
-        {
-            Console.Clear();
-            if (Job == "Sorcerer")
-            {
-                Print(Job);
-            }
-            if (Job == "Thief")
-            {
-                Print(Job);
-            }
-            if (Job == "Bard")
-            {
-                Print(Job);
-            }
         }
     }
 }

@@ -10,12 +10,9 @@ namespace AdventureGame
     {
         public string ItemName;
         public string ItemDescription;
+        public Item()
+        {
 
-
- 
-        //public virtual string DescribeItem()
-        //{
-        //    return ItemName;
-        //}
+        }
     }
 }

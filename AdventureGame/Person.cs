@@ -17,32 +17,39 @@ namespace AdventureGame
     internal class Person
     {
         public string PlayerName;
-        public string PersonName;
         public Job PlayerJob;
-        public Item item = new Item();
 
         // Both the player and npc's will need a list to hold items.
         public List<Item> playerInventory = new List<Item>();
- 
+
+        public Person()
+        {
+
+        }
+
         public void DisplayInventory()
         {
             Console.Clear();
+            Print(":*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:\n");
+            int i = 1;
             foreach (Item item in playerInventory)
             {
                 // Display the ItemName and ItemDescription
-                PrintWithColor($"\n{item.ItemName}", item.ItemName, "Black");
-                PrintWithColor($"\n{item.ItemDescription} ", item.ItemDescription, "Black");
+                Print($"{i}) {item.ItemName}");
+                Print($"         {item.ItemDescription}\n");
+                i++;
             }
+            Print(":*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:");
         }
         
-        public void AddItemToInventory(string item)
+        public void AddClassItemToInventory(string item)
         {
             if (item == "Wand")
             {
                 playerInventory.Add(new Item
                 {
                     ItemName = "Wand of Wonder",
-                    ItemDescription = "This wonderful little stick contains an an abundance of magical potential!",
+                    ItemDescription = "This wonderful little stick contains an an abundance of magical potential!"
                 });
             }
             if (item == "Grimoire")
@@ -50,7 +57,7 @@ namespace AdventureGame
                 playerInventory.Add(new Item
                 {
                     ItemName = "Never-ending Grimoire",
-                    ItemDescription = "This peculiar book contains all the incantations a sorcerer could ask for... literally",
+                    ItemDescription = "This peculiar book contains all the incantations a sorcerer could ask for... literally"
                 });
             }
             if (item == "Cloak")
@@ -84,57 +91,6 @@ namespace AdventureGame
                     ItemName = "Feathered Hat",
                     ItemDescription = "Nobody wants to listen to a bard with no style! Very stylish, indeed...",
                 });
-            }
-            if (item == "Red Key"){
-                playerInventory.Add(new Item
-                {
-                    ItemName = "Red Key",
-                    ItemDescription = ""
-                });
-            }
-            if (item == "Green Key"){
-                playerInventory.Add(new Item
-                {
-                    ItemName = "Green Key",
-                    ItemDescription = ""
-                });
-            }
-            if (item == "Blue Key"){
-                playerInventory.Add(new Item
-                {
-                    ItemName = "Blue Key",
-                    ItemDescription = ""
-                });
-            }
-        }
-
-        public void Use(Item item) 
-        { 
-            if (item.ItemName == "Wand")
-            {
-                Print("use wand");
-            }
-            if (item.ItemName == "Book")
-            {
-                Print("use book");
-            }
-
-            if (item.ItemName == "Lighter")
-            {
-                Print("use lighter");
-            }
-            if (item.ItemName == "Lockpick")
-            {
-                Print("use lockpick");
-            }
-
-            if (item.ItemName == "Torch")
-            {
-                Print("use torch");
-            }
-            if (item.ItemName == "Shield")
-            {
-                Print("use shield");
             }
         }
     }

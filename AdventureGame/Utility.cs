@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace AdventureGame
 {
@@ -45,7 +46,7 @@ namespace AdventureGame
         }
         public static void Continue()
         {
-            Console.WriteLine("Press any key to continue...");
+            Console.WriteLine("\n\nPress any key to continue...");
             Console.ReadKey();
         }
         public static void TryAgain()
@@ -181,7 +182,7 @@ namespace AdventureGame
 
         public static void DisplayItemChoices(List<Item> playerInventory)
         {
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             string output = "\n:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
             output += "\n       Will you...\n";
             int i = 1;
@@ -192,11 +193,10 @@ namespace AdventureGame
             }
             output += ":*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
             Print(output);
-            DefaultConsoleColor();
         }
         public static void DisplayChoices(List<string> Choices)
         {
-            Console.ForegroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             string output = "\n:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
             output += "\n       Will you...\n";
             int i = 1;
@@ -207,17 +207,39 @@ namespace AdventureGame
             }
             output += ":*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:._.:*~*:";
             Print(output);
-            DefaultConsoleColor();
         }
 
 
-        // This method was written by ChatGPT
-        public static void ClearLine(int line)
+        //this method was written with the help of ChatGPT. 
+        public static void ClearLastInput(string input)
         {
-            int currentLine = Console.CursorTop; // Store current cursor position
-            Console.SetCursorPosition(0, line);
-            Console.Write(new string(' ', Console.WindowWidth)); // Overwrite with spaces
-            Console.SetCursorPosition(0, currentLine); // Restore cursor position
+            if (input.Length > 0)
+            {
+                Console.SetCursorPosition(0, Console.CursorTop - 1);
+                Console.Write(new string(' ', Console.WindowWidth)); 
+                Console.SetCursorPosition(0, Console.CursorTop ); 
+            }
+        }
+
+        public static void Use(string itemName)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Print($"\nYou use: {itemName}");
+            DefaultConsoleColor();
+        }
+
+        public static void Decide(string Decision)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Print($"\nYou decide to: {Decision}");
+            DefaultConsoleColor();
+        }
+
+        public static void Warning(string Warning)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Print($"\n{Warning}");
+            DefaultConsoleColor();
         }
     }
 }

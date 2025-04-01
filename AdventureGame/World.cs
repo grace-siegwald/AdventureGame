@@ -12,7 +12,7 @@ namespace AdventureGame
     {
         // Set of locations.
         // The world "has a" location.
-        public string WorldName = "Randomazo";
+        public string WorldName = "Everhollow";
 
         List<Location> locations = new List<Location>();
         Location[,] map;
@@ -29,7 +29,7 @@ namespace AdventureGame
         //method that will setup up the world
         public void Setup()
         {
-            Console.Title = "A Random Adventure";
+            Console.Title = "An Adventure";
             Console.BackgroundColor = System.ConsoleColor.DarkGray;
             Console.ForegroundColor = System.ConsoleColor.White;
             Console.Clear();
@@ -47,17 +47,20 @@ namespace AdventureGame
         private void ChooseJob()
         {
             Console.Clear();
-            PrintWithColor($"{player.PlayerName}, welcome to the world of {WorldName} !\n" +
-                $"In {WorldName} , everywhere you go, everything you see, and every item you find is randomized.\n", WorldName, "Black");
+            PrintWithColor($"{player.PlayerName}, welcome to the world of {WorldName} !\n", WorldName, "Black");
 
             PrintWithColor($"\nHere in {WorldName} ,", WorldName, "Black");
-            PrintWithColor("there are three Jobs  to choose from. Each will give you a uniquely random gameplay experience!\n", "Jobs", "Black");
+            PrintWithColor("you have three Classes  to choose from. Each will give you a uniquely random gameplay experience!\n", "Classes", "Black");
+
+            // TEMPORARY WARNING
+            Warning("Warning: The \"Sorcerer\" is the only class with a feature complete encounter. " +
+                "\nTo experience this encounter, choose the \"Sorcerer\"");
 
             PrintWithColor($"\n 1) The Sorcerer \n", "Sorcerer", "DarkMagenta");
             PrintWithColor($"2) The Thief \n", "Thief", "DarkGreen");
             PrintWithColor($"3) The Bard \n", "Bard", "DarkBlue");
 
-            Print("\nTo choose your Job, input its corresponding number");
+            Print("\nTo choose your Class, input its corresponding number");
             SetJob();
         }
         
@@ -73,24 +76,24 @@ namespace AdventureGame
                         case 1:
                             player.PlayerJob = Job.Sorcerer;
                             // Add the Wand and the Book into the player's inventory
-                            player.AddItemToInventory("Wand");
-                            player.AddItemToInventory("Grimoire");
+                            player.AddClassItemToInventory("Wand");
+                            player.AddClassItemToInventory("Grimoire");
                             PrintWithColor($"\nYou are now a {player.PlayerJob} !", $"{player.PlayerJob}", "DarkMagenta"); 
                             break;
 
                         case 2:
                             player.PlayerJob = Job.Thief;
                             // Add the Lighter and the Lockpick to the player's inventory
-                            player.AddItemToInventory("Cloak");
-                            player.AddItemToInventory("Gloves");
+                            player.AddClassItemToInventory("Cloak");
+                            player.AddClassItemToInventory("Gloves");
                             PrintWithColor($"\nYou are now a {player.PlayerJob} !", $"{player.PlayerJob}", "DarkGreen");
                             break;
 
                         case 3:
                             player.PlayerJob = Job.Bard;
                             // Add the Torch and the Shield to the player's inventory 
-                            player.AddItemToInventory("Lute");
-                            player.AddItemToInventory("Hat");
+                            player.AddClassItemToInventory("Lute");
+                            player.AddClassItemToInventory("Hat");
                             PrintWithColor($"\nYou are now a {player.PlayerJob} !", $"{player.PlayerJob}", "DarkBlue");
                             break;
                     }
@@ -118,14 +121,20 @@ namespace AdventureGame
             //Print("Where would you like to go? Enter a number to go to the location\n");
 
             PrintWithColor($"Welcome to the Overworld ! Travel to a location by entering it's corresponding number.\n", "Overworld", "Green");
-            PrintWithColor($"To check your Inventory , type 'I'\n\n", "Inventory", "Black");
-
+            PrintWithColor($"To check your Inventory , type 'I'\n", "Inventory", "Black");
+            
+            // TEMPORARY WARNING
+            Warning("Warning: The \"Cave\" encounter is the only story that is feature complete." +
+                "\nUnfortunately, after you complete the \"Cave\" encounter, there is nothing left to do...");
+            
             Print(LocationList());
             
             string choice = Console.ReadLine();
             if (choice == "I")
             {
                 player.DisplayInventory();
+                Continue();
+                GameLoop();
             }
             if (int.TryParse(choice, out int result))
             {
@@ -166,7 +175,7 @@ namespace AdventureGame
          }
         private string LocationList()
         {
-            string output = "Locations in the world:\n";
+            string output = "\nLocations in the world:\n";
             int number = 1;
             // The "foreach" loop is specically helpful for "collections" (array, list, etc.).
             foreach (Location location in locations)
